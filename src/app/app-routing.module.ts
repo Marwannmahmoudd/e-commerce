@@ -37,7 +37,7 @@ const routes: Routes = [
   {path:'sendemail',component:EmailComponent},
   {path:'reset',component:ResetComponent},
   {path:'verfy',component:VerfiyComponent},
-  {path:'**',component:RegisterComponent}
+  {path:'**',component:NotfoundComponent}
 ];
 
 @NgModule({
