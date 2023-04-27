@@ -16,6 +16,7 @@ export class LoginComponent {
     show:boolean = true
     
     constructor(public z:UserService , private _router:Router){console.log(this.show);
+      localStorage.removeItem('userdata')
     }
  login:FormGroup = new FormGroup ({
     email:new FormControl(null , [Validators.required,Validators.email]),
