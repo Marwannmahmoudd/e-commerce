@@ -33,7 +33,7 @@
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                <ul class="navbar-nav d-flex align-items-center flex-nowrap">
+                <ul class="navbar-nav d-flex align-items-center flex-nowrap d-none">
                     <li class="nav-item d-flex flex-nowrap"> <i class="fab mx-2 fa-instagram"></i>
                         <i class="fab mx-2 fa-facebook"></i>
                         <i class="fab mx-2 fa-tiktok"></i>
@@ -47,15 +47,16 @@
                 <li class="nav-item">
                     <a *ngIf="!_userservise.token"  class="nav-link"  routerLink="register">Register</a>
                 </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link position-relative" *ngIf="_userservise.token" routerLink="cart">
+                    <i class="fas fa-shopping-cart fa-lg text-main "></i>
+                    <span class="badge fs- bg-main position-absolute top-0">{{numbercard}}</span>
+                    </a>
+                                    </li>
                 <li class="nav-item">
                     <a *ngIf="_userservise.token" (click)=" _userservise.loginout()" class="nav-link cursor-pointer" >Logout</a>
                 </li>
-                <li class="nav-item">
-<a class="nav-link position-relative" *ngIf="_userservise.token" routerLink="cart">
-<i class="fas fa-shopping-cart fa-lg text-main "></i>
-<span class="badge fs- bg-main position-absolute top-0">{{numbercard}}</span>
-</a>
-                </li>
+               
             </ul>
         </div>
   </div>
