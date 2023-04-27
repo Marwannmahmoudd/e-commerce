@@ -104,9 +104,11 @@ deleteallcart(){
 
 ngOnInit(): void {
   this.loaderservices.isloader.next(true)
+  setTimeout(() => {
+    this.loaderservices.isloader.next(false)
+  }, 1300);
   this._cartservices.getcart().subscribe({next:(res)=>{
     this.ooh2 = true
-    this.loaderservices.isloader.next(false)
     this.data = res.data
     this.data2 = res.data
     console.log(this.data2.products);
