@@ -16,14 +16,14 @@
     <p class="m-0" *ngIf="register.get('email')?.getError('email')">email is InValid</p>
 </div>
 <label>Password:</label>
-<input class="form-control mb-2" type="password" id="password" formControlName="password">
+<input class="form-control mb-2" [type]="show ? 'password' : 'text'" id="password" formControlName="password">
 
 <div *ngIf="register.get('password')?.errors && register.get('password')?.touched" class="alert alert-danger" >
     <p class="m-0" *ngIf="register.get('password')?.getError('required')">password is required</p>
     <p class="m-0" *ngIf="register.get('password')?.getError('pattern')">Minimum five characters, at least one letter and one number:</p>
 </div>
 <label>RePassword:</label>
-<input class="form-control mb-2" type="password" id="rePassword" formControlName="rePassword">
+<input class="form-control mb-2" [type]="show ? 'password' : 'text'" formControlName="rePassword">
 
 <div *ngIf="register.get('rePassword')?.errors && register.get('rePassword')?.touched" class="alert alert-danger" >
     <p class="m-0" *ngIf="register.get('rePassword')?.getError('required')">repassword is required</p>
@@ -42,7 +42,7 @@
     <input type="checkbox" id="showPassword" class="p-2 m-2" (click)="showpass()"/>
     <label for="showPassword">{{show ? 'Show' : 'Hide'}} password</label>
 </div>
-<div class="  mb-5">
+<div class="  ms-auto">
 
 
 <button [disabled]="register.status == 'INVALID'" type="submit" class="btn ms-auto d-block btn-success">
@@ -51,9 +51,10 @@
    <span *ngIf="ooh == false" > Register</span>
 </button>
 </div>
-<div *ngIf="erorr" class="alert alert-danger mt-4 text-center">
-{{erorr}}
-</div>
+
 </div>
     </form>
+    <div *ngIf="erorr" class="alert alert-danger  text-center w-75 mt-4 mx-auto text-nowrap d-block">
+        {{erorr}}
+        </div>
 </div>

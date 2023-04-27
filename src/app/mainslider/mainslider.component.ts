@@ -19,9 +19,10 @@ export class MainsliderComponent implements OnInit{
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
-    touchDrag: false,
-    pullDrag: true,
+    touchDrag:true,
+    pullDrag: false,
     dots:false,
+    autoplay : true,
     navSpeed: 700,
     navText: ['', ''],
     responsive: {

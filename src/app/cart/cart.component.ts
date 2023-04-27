@@ -22,6 +22,7 @@ export class CartComponent implements OnInit{
   ooh2:boolean = true
   erorr:any
   indexx:any
+  check:boolean = true
 constructor(private _cartservices:CartService ,private loaderservices:LoaderService , private toast:ToastrService, private _activ:ActivatedRoute ,private user:UserService){
 }
 
@@ -68,7 +69,7 @@ this.data.products.splice(this.indexx ,1)
 }
 shownot(){
   this.toast.error('product has been successfully deleted' , '' , {
-   positionClass: 'toast-bottom-right' 
+   positionClass: 'toast-top-right' 
   })
 }
 updateitem(idd:string,count:number){
@@ -111,12 +112,13 @@ ngOnInit(): void {
     console.log(this.data2.products);
     this._activ.paramMap.subscribe((res)=>{
       this.id =  res.get('id') || ''
+    
       })
   },
   error:(eror)=>{
    this.erorr = eror.error.message
    console.log(this.erorr);
-   if(this.data2 === null || this.erorr !== null){
+   if(this.data2 === null || this.erorr !== null ||  this.erorr === undefined){
     this.loaderservices.isloader.next(false)
   this.ooh2 = false
   console.log(this.erorr);

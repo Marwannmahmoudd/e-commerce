@@ -87,7 +87,7 @@ addtocart(id:any){
     }
     else{
       this.toast.success('product has been successfully added' , '' , {
-        positionClass: 'toast-bottom-left' ,
+        positionClass: 'toast-top-right' ,
         
        })
     }
@@ -111,9 +111,10 @@ ngOnInit(): void {
 customOptions: OwlOptions = {
   loop: true,
   mouseDrag: true,
-  touchDrag: false,
+  touchDrag: true,
   pullDrag: false,
   dots: false,
+  autoplay : true,
   navSpeed: 700,
   navText: ['', ''],
   responsive: {

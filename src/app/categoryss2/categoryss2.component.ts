@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import * as $ from "jquery"
 @Component({
   selector: 'app-categoryss2',
   templateUrl: './categoryss2.component.html',
@@ -17,20 +18,24 @@ ngOnInit(): void {
 this.category = res.data
     }
   })
+ 
 }
-customOptions: OwlOptions = {
+customOptions:
+ OwlOptions = {
   loop: true,
   mouseDrag: true,
-  touchDrag: false,
+  touchDrag: true,
   pullDrag: false,
+  autoplay : true,
   dots: false,
   navSpeed: 700,
   navText: ['', ''],
   responsive: {
     0: {
-      items: 7
+      items: 4
     }
   },
   nav: true
 }
+
 }

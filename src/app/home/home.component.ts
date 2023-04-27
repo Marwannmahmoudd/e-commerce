@@ -65,7 +65,7 @@ constructor(private _productservise:ProductService , private _cartservices:CartS
 addtocart(id:string){
   if(!localStorage.getItem('userdata') ){
     this.toast.error('please login with your account' , '' , {
-      positionClass: 'toast-bottom-left' ,
+      positionClass: 'toast-top-right' ,
       
      })
     this.user.token = null
@@ -84,7 +84,7 @@ shownot(){
   }
   else{
     this.toast.success('product has been successfully added' , '' , {
-      positionClass: 'toast-bottom-left' ,
+      positionClass: 'toast-top-left' ,
       
      })
   }
