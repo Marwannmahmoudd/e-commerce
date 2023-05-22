@@ -6,11 +6,11 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class CartService {
-  baseurl:string = "https://route-ecommerce.onrender.com"
+  baseurl:string = "https://route-ecommerce-app.vercel.app"
   headers:any = {
     token:localStorage.getItem('userdata') 
   }
-  
+  token:any = localStorage.getItem('userdata') 
   numberofcart:BehaviorSubject<number>=new BehaviorSubject(0)
   constructor(private _httpclient:HttpClient , private _router:Router) {
     console.log(this.headers);
@@ -28,6 +28,8 @@ _router.navigate(['/login'])
     })
   }
   addtocart( productId:string):Observable<any>{
+    console.log(this.token);
+    
   return  this._httpclient.post(this.baseurl + '/api/v1/cart' , {
     productId: productId
   },{

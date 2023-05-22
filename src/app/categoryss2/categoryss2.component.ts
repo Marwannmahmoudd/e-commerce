@@ -32,7 +32,16 @@ customOptions:
   navText: ['', ''],
   responsive: {
     0: {
-      items: 4
+      items: 3
+    },
+    400: {
+      items: 5
+    },
+    740: {
+      items: 6
+    },
+    940: {
+      items: 7
     }
   },
   nav: true
